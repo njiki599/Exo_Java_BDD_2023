@@ -77,7 +77,7 @@
        for (int espace = cpt - x; espace > 0; espace--) { %>
            &nbsp; 
 <%     }
-       for (int y = 1; y <= i; y++) { %>
+       for (int y = 1; y <= x; y++) { %>
            <%= "*" %>
 <%     } %>
 </br>
@@ -103,7 +103,7 @@
        for (int espace = cpt - w; espace > 0; espace--) { %>
            &nbsp; 
 <%     }
-       for (int z = 1; z <= i; z++) { %>
+       for (int z = 1; z <= w; z++) { %>
            <%= "*" %> 
 <%     } %>
 </br>
