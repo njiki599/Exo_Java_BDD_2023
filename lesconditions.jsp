@@ -27,7 +27,7 @@
 
     <%-- Vérification de la saisie pour Exercice 2 --%>
     <% if (valeurPair != null && !valeurPair.isEmpty()) { %>
-       <% int nombre = Integer.parseInt(valeurPair); %>
+       <% int nbre = Integer.parseInt(valeurPair); %>
    
     
 <h2>Exercice 1 : Comparaison 1</h2>
@@ -40,8 +40,8 @@
 <% } %>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
-<p>Le nombre saisi est <%= nombre %>.</p>
-    <% if (nombre % 2 == 0) { %>
+<p>Le nombre saisi est <%= nbre %>.</p>
+    <% if (nbre % 2 == 0) { %>
         <p> Ce nombre est pair.</p>
     <% } else { %>
         <p> Ce nombre est impair.</p>
