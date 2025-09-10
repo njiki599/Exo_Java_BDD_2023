@@ -63,7 +63,7 @@
        for (int espace = cpt - s; espace > 0; espace--) { %>
            &nbsp; 
 <%     }
-       for (int v = 1; v <= s; j++) { %>
+       for (int v = 1; v <= s; v++) { %>
            <%= "*" %> 
 <% } %>
 </br>
