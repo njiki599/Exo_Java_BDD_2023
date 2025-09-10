@@ -71,23 +71,54 @@
 </p>
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;***</br>&nbsp;****</br>*****</p>
+<p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
+<p>
+<% for (int x = 1; x <= cpt; x++) {
+       for (int espace = cpt - x; espace > 0; espace--) { %>
+           &nbsp; 
+<%     }
+       for (int y = 1; y <= i; y++) { %>
+           <%= "*" %>
+<%     } %>
+</br>
+<% } %>
+</p>
 
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-<p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
+<p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
+<p>
+<% // Partie haute
+   for (int w = 1; w <= cpt; w++) {
+       for (int espace = cpt - w; espace > 0; espace--) { %>
+           &nbsp; 
+<%     }
+       for (int z = 1; z <= w; z++) { %>
+           <%= "*" %>
+<%     } %>
+</br>
+<% } 
+   // Partie basse
+   for (int w = cpt - 1; w >= 1; w--) {
+       for (int espace = cpt - w; espace > 0; espace--) { %>
+           &nbsp; 
+<%     }
+       for (int z = 1; z <= i; z++) { %>
+           <%= "*" %> 
+<%     } %>
+</br>
+<% } %>
+</p>
 
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>5 x 1 = 5</p>
-<p>5 x 2 = 10</p>
-<p>5 x 3 = 15</p>
-<p>5 x 4 = 20</p>
-<p>5 x 5 = 25</p>
+<p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
+<p>
+<% for (int p = 1; p <= 10; p++) { %>
+    <%= cpt %> x <%= p %> = <%= (cpt * p) %>
+</br>
+<% } %>
+</p>
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
