@@ -19,27 +19,41 @@
 
 <%-- Boucle for pour afficher une ligne d'étoiles --%>
     <%int cpt = Integer.parseInt(valeur); %>
-    <p>
-    <% for (int i = 1; i <= cpt; i++) { 
-            for (int j = 1; j <= cpt; j++){ %>
-       <%= "*" %>
-    <% } %>
-    </p>
-
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
 <p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
-<p>*</br>**</br>***</br>****</br>*****</p> 
+<p>
+<% for (int i = 1; i <= cpt; i++) {
+       for (int j = 1; j <= cpt; j++) { %>
+           <%= "*" %>
+   <% } %>
+</br>
+<% } %>
+</p>
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*</br>**</br>***</br>****</br>*****</p>
+<p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
+<p>
+<% for (int k = 1; k <= cpt; k++) {
+       for (int l = 1; l <= i; l++) { %>
+           <%= "*" %>
+<% } %>
+</br>
+<% } %>
+</p>
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>****</br>***</br>**</br>*</p>
+<p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
+<p>
+<% for (int m = cpt; m >= 1; m--) {
+       for (int n = 1; n <= i; n++) { %>
+           <%= "*" %>
+<% } %>
+</br>
+<% } %>
+</p>
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
