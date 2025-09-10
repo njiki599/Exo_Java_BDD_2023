@@ -46,6 +46,7 @@
             <%tab[i] = Integer.parseInt(tableauDeChiffres2[i]); %>
        <% } %>
 
+<% } %>
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
@@ -96,7 +97,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
        <% } %>
 <p>La valeur la plus proche de 0 (avec priorité au positif) est : <%= procheZero2 %></p>
 
-<% } %>
+
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
