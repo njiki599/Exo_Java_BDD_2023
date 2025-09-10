@@ -30,6 +30,8 @@
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 <p>Somme = <%= (Chiffre1 + Chiffre2) %></p>
 
+<% } %>
+
 <form action="#" method="post">
     <p>Saisir au minimu 3 chiffres à la suite, exemple : 6 78 15 <input type="text" id="inputValeur2" name="chaine2">
     <p><input type="submit" value="Afficher">
@@ -46,7 +48,6 @@
             <%tab[i] = Integer.parseInt(tableauDeChiffres2[i]); %>
        <% } %>
 
-<% } %>
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
