@@ -18,18 +18,13 @@
     <% String valeurC = request.getParameter("valeurC"); %>
     <% String valeurPair = request.getParameter("valeurPair"); %>
 
-    <%-- Vérification de la condition entre les 3 valeurs pour Exercice 1 --%>
+    <%-- Vérification de la condition entre les 3 valeurs --%>
     <% if (valeurA != null && valeurB != null && valeurC != null && !valeurA.isEmpty() && !valeurB.isEmpty() && !valeurC.isEmpty()) { %>
         
         <% int intValeurA = Integer.parseInt(valeurA); %>
         <% int intValeurB = Integer.parseInt(valeurB); %>
         <% int intValeurC = Integer.parseInt(valeurC); %>
 
-    <%-- Vérification de la saisie pour Exercice 2 --%>
-    <% if (valeurPair != null && !valeurPair.isEmpty()) { %>
-       <% int nbre = Integer.parseInt(valeurPair); %>
-   
-    
 <h2>Exercice 1 : Comparaison 1</h2>
 <p>intValeurA = <%= intValeurA %>, intValeurB = <%= intValeurB %>, intValeurC = <%= intValeurC %></p>
     <% if ((intValeurC >= intValeurA && intValeurC <= intValeurB) || (intValeurC >= intValeurB && intValeurC <= intValeurA)) { %>
@@ -38,6 +33,10 @@
         <p>Non, C n'est pas compris entre A et B.</p>
     <% } %>
 <% } %>
+
+<%-- Vérification de la saisie pour Exercice 2 --%>
+<% if (valeurPair != null && !valeurPair.isEmpty()) { %>
+    <% int nbre = Integer.parseInt(valeurPair); %>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Le nombre saisi est <%= nbre %>.</p>
