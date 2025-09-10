@@ -55,7 +55,7 @@
 <p>
     <% String[] mots = chaine.split(" ");  %>
        <% for (String mot : mots) {  %>
-           <% out.println(mot); %>
+           <p> <% out.println(mot); %> </br>
        <% } %>
 </p>
 
