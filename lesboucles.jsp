@@ -36,7 +36,7 @@
 <p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
 <p>
 <% for (int k = 1; k <= cpt; k++) {
-       for (int l = 1; l <= i; l++) { %>
+       for (int l = 1; l <= k; l++) { %>
            <%= "*" %>
 <% } %>
 </br>
@@ -48,7 +48,7 @@
 <p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
 <p>
 <% for (int m = cpt; m >= 1; m--) {
-       for (int n = 1; n <= i; n++) { %>
+       for (int n = 1; n <= m; n++) { %>
            <%= "*" %>
 <% } %>
 </br>
@@ -57,9 +57,18 @@
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-
+<p>Exemple si l'utilisateur saisie le valeur <%= cpt %> :</p>
+<p>
+<% for (int s = 1; s <= cpt; s++) {
+       for (int espace = cpt - s; espace > 0; espace--) { %>
+           &nbsp; 
+<%     }
+       for (int v = 1; v <= s; j++) { %>
+           <%= "*" %> 
+<% } %>
+</br>
+<% } %>
+</p>
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
