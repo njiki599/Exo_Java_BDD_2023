@@ -32,8 +32,10 @@
 
 <% } %>
 
+<h1>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</h1>
+
 <form action="#" method="post">
-    <p>Saisir au minimu 3 chiffres à la suite, exemple : 6 78 15 <input type="text" id="inputValeur2" name="chaine2">
+    <p>Saisir au minimu 3 chiffres à la suite, exemple : 6 78 15 20 30 ...... <input type="text" id="inputValeur2" name="chaine2">
     <p><input type="submit" value="Afficher">
 </form>
 <%-- Récupération des valeurs --%>
@@ -48,10 +50,8 @@
             <%tab[i] = Integer.parseInt(tableauDeChiffres2[i]); %>
        <% } %>
 
-
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
-<p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
-Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
+<p>Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 <% int somme = 0; %>
     <% for (int n : tab) { %>
             <% somme += n; %>
