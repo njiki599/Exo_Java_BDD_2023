@@ -30,8 +30,6 @@
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 <p>Somme = <%= (Chiffre1 + Chiffre2) %></p>
 
-<% } %>
-
 <form action="#" method="post">
     <p>Saisir au minimu 3 chiffres à la suite, exemple : 6 78 15 <input type="text" id="inputValeur2" name="chaine2">
     <p><input type="submit" value="Afficher">
@@ -98,7 +96,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
        <% } %>
 <p>La valeur la plus proche de 0 (avec priorité au positif) est : <%= procheZero2 %></p>
 
-
+<% } %>
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
