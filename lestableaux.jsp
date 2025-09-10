@@ -16,26 +16,35 @@
 
     <%-- Division de la chaîne de chiffres séparés par des espaces --%>
     <% String[] tableauDeChiffres = chaine.split("\\s+"); %>
-    <%int[] tab = new int[tableauDeChiffres.length]; %>
-        <%for (int i = 0; i < tableauDeChiffres.length; i++) { %>
-            <%tab[i] = Integer.parseInt(tableauDeChiffres[i]); %>
-       <% } %>
-<p>Le tableau contient <%= tab.length %> valeurs :</p>
-<p>
-    <% for (int i = 0; i < tab.length; i++) { %>
-           <% out.println("Valeur " + (i+1) + " : " + tab[i]); %>
-       <% } %>
-</p>
+    <p>La tableau contient <%= tableauDeChiffres.length %> valeurs</br>
+    <% int Chiffre1 = Integer.parseInt(tableauDeChiffres[0]); %></br>
+    <% int Chiffre2 = Integer.parseInt(tableauDeChiffres[1]); %></br>
+    <% int Chiffre3 = Integer.parseInt(tableauDeChiffres[2]); %></p>
 
 
 <h2>Exercice 1 : Le carré de la première valeur</h2>
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
-<p>Le carré de <%= tab[0] %> est : <%= (tab[0] * tab[0]) %></p>
+<p>Le carré de <%= Chiffre1 %> est : <%= (Chiffre1 * Chiffre1) %></p>
 
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
-<p>Somme = <%= (tab[0] + tab[1]) %></p>
+<p>Somme = <%= (Chiffre1 + Chiffre2) %></p>
 
+<form action="#" method="post">
+    <p>Saisir au minimu 3 chiffres à la suite, exemple : 6 78 15 <input type="text" id="inputValeur2" name="chaine2">
+    <p><input type="submit" value="Afficher">
+</form>
+<%-- Récupération des valeurs --%>
+    <% String chaine2 = request.getParameter("chaine2"); %>
+    
+    <% if (chaine2 != null) { %>
+
+    <%-- Division de la chaîne de chiffres séparés par des espaces --%>
+    <% String[] tableauDeChiffres2 = chaine2.split("\\s+"); %>
+    <%int[] tab = new int[tableauDeChiffres2.length]; %>
+        <%for (int i = 0; i < tableauDeChiffres2.length; i++) { %>
+            <%tab[i] = Integer.parseInt(tableauDeChiffres2[i]); %>
+       <% } %>
 
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
