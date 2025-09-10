@@ -21,7 +21,7 @@
     Chiffre 2 : <%= Integer.parseInt(tableauDeChiffres[1]) %></br>
     Chiffre 3 : <%= Integer.parseInt(tableauDeChiffres[2]) %></p>
     
-<h2>Exercice 1 : La carré de la première valeur</h2>
+<h2>Exercice 1 : Le carré de la première valeur</h2>
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
 
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
@@ -31,7 +31,7 @@
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 
-<h2>Exercice 4 : La valeur maximum</h2>
+<h2>Exercice 4 : La valeur maximale</h2>
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 
 <h2>Exercice 5 : La valeur minimale</h2>
