@@ -46,7 +46,7 @@
 <p>Ecrire le programme pour afficher le texte en vertical</br>
 <p>
     <% for (int i = 0; i < chaine.length(); i++) { %>
-           <% out.println(chaine.charAt(i)); %>
+           <p><% out.println(chaine.charAt(i)); %></br>
        <% } %>
 </p>
 
