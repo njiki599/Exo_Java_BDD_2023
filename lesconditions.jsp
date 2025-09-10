@@ -21,13 +21,13 @@
     <%-- Vérification de la condition entre les 3 valeurs --%>
     <% if (valeurA != null && valeurB != null && valeurC != null && !valeurA.isEmpty() && !valeurB.isEmpty() && !valeurC.isEmpty()) { %>
         
-        <% int intValeurA = Integer.parseInt(valeurA); %>
-        <% int intValeurB = Integer.parseInt(valeurB); %>
-        <% int intValeurC = Integer.parseInt(valeurC); %>
+        <% int A = Integer.parseInt(valeurA); %>
+        <% int B = Integer.parseInt(valeurB); %>
+        <% int C = Integer.parseInt(valeurC); %>
 
 <h2>Exercice 1 : Comparaison 1</h2>
-<p>intValeurA = <%= intValeurA %>, intValeurB = <%= intValeurB %>, intValeurC = <%= intValeurC %></p>
-    <% if ((intValeurC >= intValeurA && intValeurC <= intValeurB) || (intValeurC >= intValeurB && intValeurC <= intValeurA)) { %>
+<p>A = <%= A %>, B = <%= B %>, C = <%= C %></p>
+    <% if ((C >= A && C <= B) || (C >= B && C <= A)) { %>
         <p>Oui,C est compris entre A et B.</p>
     <% } else { %>
         <p>Non, C n'est pas compris entre A et B.</p>
