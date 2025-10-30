@@ -20,7 +20,14 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+	<display-name>Mini Gestionnaire de Tâches Collaboratif</display-name>
+
+	<welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
 
 </web-app>
+
 
 
