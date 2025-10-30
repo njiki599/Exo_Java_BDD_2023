@@ -1,59 +1,97 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*, mypackage.Task" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    // Récupération de la liste des tâches depuis la session
+    ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("tasks");
+    if (tasks == null) {
+        tasks = new ArrayList<>();
+        session.setAttribute("tasks", tasks);
+    }
+
+    // Gestion de l'ajout d'une tâche
+    String action = request.getParameter("action");
+    if ("ajouter".equals(action)) {
+        String titre = request.getParameter("titre");
+        String description = request.getParameter("description");
+        String dateStr = request.getParameter("date");
+        Date dateEcheance = null;
+        try {
+            dateEcheance = new java.text.SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
+        } catch(Exception e) {}
+        tasks.add(new Task(titre, description, dateEcheance));
+    }
+
+    // Gestion de la suppression
+    if ("supprimer".equals(action)) {
+        int index = Integer.parseInt(request.getParameter("index"));
+        if (index >= 0 && index < tasks.size()) {
+            tasks.remove(index);
+        }
+    }
+
+    // Gestion du marquage comme terminée
+    if ("terminer".equals(action)) {
+        int index = Integer.parseInt(request.getParameter("index"));
+        if (index >= 0 && index < tasks.size()) {
+            tasks.get(index).setTerminee(true);
+        }
+    }
+%>
+
 <html>
 <head>
-    <title>Mini Gestionnaire de Tâches Collaboratif</title>
+    <title>Mini Gestionnaire de Tâches</title>
     <meta charset="UTF-8">
 </head>
 <body>
-    <h1>Projet : Mini Gestionnaire de Tâches Collaboratif</h1>
+<h1>Mini Gestionnaire de Tâches Collaboratif</h1>
 
-    <h2>Objectifs pédagogiques</h2>
-    <p>
-        Créer une application web dynamique en Java avec JSP/Servlets.<br>
-        Utiliser la programmation orientée objet (POO).<br>
-        Manipuler des collections d’objets Java.
-    </p>
+<h2>Ajouter une tâche</h2>
+<form method="post" action="Projet.jsp">
+    <input type="hidden" name="action" value="ajouter"/>
+    Titre : <input type="text" name="titre" required/><br/>
+    Description : <input type="text" name="description" required/><br/>
+    Date d'échéance : <input type="date" name="date"/><br/>
+    <input type="submit" value="Ajouter"/>
+</form>
 
-    <h2>Contexte</h2>
-    <p>
-        Dans le cadre de votre module sur la programmation Java, vous devez créer une application web simple permettant à un utilisateur de :
-        <ul>
-            <li>Ajouter des tâches</li>
-            <li>Consulter la liste de ses tâches</li>
-        </ul>
-        Chaque tâche doit contenir :
-        <ul>
-            <li>Un titre</li>
-            <li>Une description</li>
-        </ul>
-        Les tâches doivent être conservées le temps de la session de l’utilisateur (pas besoin de base de données).
-    </p>
+<h2>Liste des tâches</h2>
+<table border="1">
+    <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Date d'échéance</th>
+        <th>Terminé</th>
+        <th>Actions</th>
+    </tr>
+<%
+    for (int i = 0; i < tasks.size(); i++) {
+        Task t = tasks.get(i);
+%>
+    <tr>
+        <td><%= t.getTitre() %></td>
+        <td><%= t.getDescription() %></td>
+        <td><%= t.getDateEcheance() != null ? new java.text.SimpleDateFormat("yyyy-MM-dd").format(t.getDateEcheance()) : "" %></td>
+        <td><%= t.isTerminee() ? "Oui" : "Non" %></td>
+        <td>
+            <form style="display:inline" method="post" action="Projet.jsp">
+                <input type="hidden" name="action" value="supprimer"/>
+                <input type="hidden" name="index" value="<%= i %>"/>
+                <input type="submit" value="Supprimer"/>
+            </form>
+            <% if (!t.isTerminee()) { %>
+            <form style="display:inline" method="post" action="Projet.jsp">
+                <input type="hidden" name="action" value="terminer"/>
+                <input type="hidden" name="index" value="<%= i %>"/>
+                <input type="submit" value="Terminer"/>
+            </form>
+            <% } %>
+        </td>
+    </tr>
+<% } %>
+</table>
 
-    <h2>Contraintes techniques</h2>
-    <ul>
-        <li>Créer une classe Java représentant une tâche (Task) avec des attributs privés.</li>
-        <li>L’ajout de tâches se fait via un formulaire HTML dans cette page.</li>
-        <li>Les tâches sont enregistrées dans une liste stockée en session (<code>ArrayList&lt;Task&gt;</code>).</li>
-        <li>L'affichage des tâches utilise une boucle dans cette page JSP.</li>
-        <li>Le projet doit pouvoir être déployé dans un serveur Apache Tomcat.</li>
-    </ul>
-
-    <h2>Fonctionnalités attendues</h2>
-    <ul>
-        <li>Ajouter une tâche : formulaire dans la page JSP.</li>
-        <li>Afficher les tâches : liste visible avec titre et description.</li>
-        <li>Accueil : page d'accueil avec navigation vers les autres fonctionnalités.</li>
-        <li>Suppression d’une tâche : permettre la suppression d'une tâche.</li>
-        <li>Date d’échéance : la tâche contiendra une « date d’échéance ».</li>
-        <li>Tâche terminée : permettre de marquer une tâche comme terminée.</li>
-    </ul>
-
-    <h2>Livrables attendus</h2>
-    <p>
-        - Le lien URL de votre Repository GitHub contenant l'application fonctionnelle : JSP, classe(s) Java (Task.java), fichier web.xml.<br>
-        - Votre application disponible sur le serveur AWS.
-    </p>
-
-    <p><a href="index.html">Retour à l'accueil</a></p>
+<p><a href="index.html">Retour à l'accueil</a></p>
 </body>
 </html>
