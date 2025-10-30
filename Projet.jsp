@@ -70,7 +70,7 @@
 </head>
 <body>
 <div class="card">
-    <h1>🗂 Mini Gestionnaire de Tâches Collaboratif</h1>
+    <h1>🧩 Mini Gestionnaire de Tâches Collaboratif</h1>
 
     <!-- Formulaire d'ajout -->
     <h2>Ajouter une tâche</h2>
