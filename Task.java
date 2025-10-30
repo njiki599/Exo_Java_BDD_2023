@@ -1,26 +1,24 @@
-
 package mypackage;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Task implements Serializable {
-    private String title;
+    private String titre;
     private String description;
-    private LocalDate dueDate;
-    private boolean completed;
+    private Date dateEcheance;
+    private boolean terminee;
 
-    public Task(String title, String description, LocalDate dueDate) {
-        this.title = title;
+    public Task(String titre, String description, Date dateEcheance) {
+        this.titre = titre;
         this.description = description;
-        this.dueDate = dueDate;
-        this.completed = false;
+        this.dateEcheance = dateEcheance;
+        this.terminee = false;
     }
 
-    public String getTitle() { return title; }
+    public String getTitre() { return titre; }
     public String getDescription() { return description; }
-    public LocalDate getDueDate() { return dueDate; }
-    public boolean isCompleted() { return completed; }
-
-    public void setCompleted(boolean completed) { this.completed = completed; }
+    public Date getDateEcheance() { return dateEcheance; }
+    public boolean isTerminee() { return terminee; }
+    public void setTerminee(boolean terminee) { this.terminee = terminee; }
 }
