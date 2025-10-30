@@ -1,66 +1,59 @@
-
-<%@ page import="java.util.*, mypackage.Task" %>
-<%@ page session="true" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
+    <title>Mini Gestionnaire de Tâches Collaboratif</title>
     <meta charset="UTF-8">
-    <title>Mini Gestionnaire de Tâches</title>
 </head>
 <body>
-    <h1>Mini Gestionnaire de Tâches Collaboratif</h1>
+    <h1>Projet : Mini Gestionnaire de Tâches Collaboratif</h1>
 
-    <h2>Ajouter une tâche</h2>
-    <form action="TaskServlet" method="post">
-        <input type="hidden" name="action" value="add">
-        Titre : <input type="text" name="title" required><br>
-        Description : <input type="text" name="description" required><br>
-        Date d’échéance : <input type="date" name="dueDate" required><br>
-        <input type="submit" value="Ajouter">
-    </form>
+    <h2>Objectifs pédagogiques</h2>
+    <p>
+        Créer une application web dynamique en Java avec JSP/Servlets.<br>
+        Utiliser la programmation orientée objet (POO).<br>
+        Manipuler des collections d’objets Java.
+    </p>
 
-    <h2>Liste des tâches</h2>
-    <%
-        ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("tasks");
-        if (tasks == null || tasks.isEmpty()) {
-    %>
-        <p>Aucune tâche pour le moment.</p>
-    <%
-        } else {
-    %>
-        <table border="1" cellpadding="5">
-            <tr><th>Titre</th><th>Description</th><th>Échéance</th><th>État</th><th>Actions</th></tr>
-            <%
-                for (int i = 0; i < tasks.size(); i++) {
-                    Task t = tasks.get(i);
-            %>
-                <tr>
-                    <td><%= t.getTitle() %></td>
-                    <td><%= t.getDescription() %></td>
-                    <td><%= t.getDueDate() %></td>
-                    <td><%= t.isCompleted() ? "Terminée" : "En cours" %></td>
-                    <td>
-                        <% if (!t.isCompleted()) { %>
-                            <form action="TaskServlet" method="post" style="display:inline;">
-                                <input type="hidden" name="action" value="complete">
-                                <input type="hidden" name="index" value="<%= i %>">
-                                <input type="submit" value="Terminer">
-                            </form>
-                        <% } %>
-                        <form action="TaskServlet" method="post" style="display:inline;">
-                            <input type="hidden" name="action" value="delete">
-                            <input type="hidden" name="index" value="<%= i %>">
-                            <input type="submit" value="Supprimer">
-                        </form>
-                    </td>
-                </tr>
-            <%
-                }
-            %>
-        </table>
-    <%
-        }
-    %>
+    <h2>Contexte</h2>
+    <p>
+        Dans le cadre de votre module sur la programmation Java, vous devez créer une application web simple permettant à un utilisateur de :
+        <ul>
+            <li>Ajouter des tâches</li>
+            <li>Consulter la liste de ses tâches</li>
+        </ul>
+        Chaque tâche doit contenir :
+        <ul>
+            <li>Un titre</li>
+            <li>Une description</li>
+        </ul>
+        Les tâches doivent être conservées le temps de la session de l’utilisateur (pas besoin de base de données).
+    </p>
 
-    <p><a href="index.html">Retour à l’accueil</a></p>
+    <h2>Contraintes techniques</h2>
+    <ul>
+        <li>Créer une classe Java représentant une tâche (Task) avec des attributs privés.</li>
+        <li>L’ajout de tâches se fait via un formulaire HTML dans cette page.</li>
+        <li>Les tâches sont enregistrées dans une liste stockée en session (<code>ArrayList&lt;Task&gt;</code>).</li>
+        <li>L'affichage des tâches utilise une boucle dans cette page JSP.</li>
+        <li>Le projet doit pouvoir être déployé dans un serveur Apache Tomcat.</li>
+    </ul>
+
+    <h2>Fonctionnalités attendues</h2>
+    <ul>
+        <li>Ajouter une tâche : formulaire dans la page JSP.</li>
+        <li>Afficher les tâches : liste visible avec titre et description.</li>
+        <li>Accueil : page d'accueil avec navigation vers les autres fonctionnalités.</li>
+        <li>Suppression d’une tâche : permettre la suppression d'une tâche.</li>
+        <li>Date d’échéance : la tâche contiendra une « date d’échéance ».</li>
+        <li>Tâche terminée : permettre de marquer une tâche comme terminée.</li>
+    </ul>
+
+    <h2>Livrables attendus</h2>
+    <p>
+        - Le lien URL de votre Repository GitHub contenant l'application fonctionnelle : JSP, classe(s) Java (Task.java), fichier web.xml.<br>
+        - Votre application disponible sur le serveur AWS.
+    </p>
+
+    <p><a href="index.html">Retour à l'accueil</a></p>
 </body>
 </html>
