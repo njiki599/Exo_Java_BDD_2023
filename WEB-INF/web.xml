@@ -20,4 +20,16 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+	<servlet>
+    	<servlet-name>TaskServlet</servlet-name>
+    	<servlet-class>mypackage.TaskServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+    	<servlet-name>TaskServlet</servlet-name>
+    	<url-pattern>/TaskServlet</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
+
