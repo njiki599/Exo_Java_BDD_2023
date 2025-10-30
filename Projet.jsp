@@ -58,14 +58,34 @@
 <meta charset="UTF-8">
 <title>Mini Gestionnaire de Tâches</title>
 <style>
-    body { font-family: Arial; background: #f9f9f9; padding: 40px; }
-    h1 { color: #333; }
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; background: #fff; }
-    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
-    th { background-color: #eee; }
-    .completed { text-decoration: line-through; color: gray; }
-    form { margin: 0; display: inline; }
-    .card { background:white; padding:20px; border-radius:10px; box-shadow:0 0 5px #ccc; }
+    body {font-family: "Segoe UI", Arial, sans-serif; background: linear-gradient(135deg, #f6f8fc, #e8efff); margin: 0;padding: 0;}
+    header {background-color: #3366cc; color: white; padding: 20px 40px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+    h1 { margin: 0; font-size: 28px;}
+    main {max-width: 900px; margin: 30px auto; background: white; padding: 30px 40px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);}
+    h2 { color: #3366cc; border-bottom: 2px solid #3366cc; padding-bottom: 5px;}
+    form {margin: 15px 0;}
+    label {font-weight: bold; color: #444; }
+    input[type="text"],
+    input[type="date"],
+    textarea {width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; font-size: 14px;}
+    input[type="submit"], button { background-color: #3366cc; color: white; border: none; border-radius: 6px; padding: 8px 15px; font-size: 14px; cursor: pointer; transition: background 0.3s;}
+    input[type="submit"]:hover,
+    button:hover { background-color: #254c99;}
+    table { width: 100%; border-collapse: collapse; margin-top: 25px; background-color: #fafafa; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd;}
+    th { background-color: #3366cc; color: white; }
+    tr:hover { background-color: #f1f5ff;}
+    .completed { text-decoration: line-through; color: #777;}
+    .actions form { display: inline;}
+    footer { text-align: center; color: #666; padding: 20px; font-size: 13px;}
+    .no-task {background: #eef4ff; padding: 15px; border-radius: 6px; border-left: 5px solid #3366cc; color: #333; margin-top: 15px;}
+    .btn-complete { background-color: #28a745;}
+    .btn-complete:hover { background-color: #218838; }
+    .btn-delete { background-color: #dc3545; }
+    .btn-delete:hover { background-color: #b02a37;}
+    .top-links { text-align: right; margin-bottom: 10px;}
+    .top-links a { color: #3366cc; text-decoration: none; font-weight: bold;}
+    .top-links a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
